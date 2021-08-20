@@ -422,6 +422,25 @@ get_functions() {
     printf '%s\n' "${functions[@]//declare -f }"
 }
 
+#######################################
+# Assertion for unittest
+# Globals:
+# Arguments:
+# Outputs:
+# Returns: array
+#######################################
+assert_equals() {
+    if [[ "$1" == "$2" ]]; then
+        ((pass+=1))
+        status=$'\e[32m✔'
+    else
+        ((fail+=1))
+        status=$'\e[31m✖'
+        local err="(\"$1\" != \"$2\")"
+    fi
+
+    printf ' %s\e[m | %s\n' "$status" "${FUNCNAME[1]/test_} $err"
+}
 
 # Capture the return value of a function without command substitution: 
 # 
