@@ -1,3 +1,8 @@
+#!/bin/bash
+
+{
+alias cmd='f(){ a=$* && (${a}); }; f'
+alias diffop='f(){ a=$1 && b=$2 && diff $1 < ${b}; };'
 alias ll='ls -lht'
 alias la='ls -lhta'
 alias untar='tar -zxvf'
@@ -24,3 +29,4 @@ alias install='yum install -y'
 alias update='yum update -y'
 alias upgrade='yum upgrade -y'
 alias restart='systemctl restart'
+}
