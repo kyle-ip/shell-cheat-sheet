@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 {
-    
+
 alias cmd='f(){ a=$* && (${a}); }; f'
 
 alias diffop='f(){ a=$1 && b=$2 && diff $1 < ${b}; };'
