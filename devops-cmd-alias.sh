@@ -58,6 +58,8 @@ alias upgrade='yum upgrade -y'
 
 alias restart='systemctl restart'
 
+alias docs='wget -r -np -nc -k -c'
+
 bkr() { (nohup "$@" &>/dev/null &) }
 
 }
