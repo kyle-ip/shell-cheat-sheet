@@ -85,6 +85,10 @@ function install_docker() {
     echo "Adding the current user to the docker group..."
     sudo usermod -aG docker $USER
 
+    # sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+    # sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+    # sudo service docker start
+
     # Install Docker Compose
     echo "Installing Docker Compose..."
     sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
