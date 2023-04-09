@@ -22,7 +22,10 @@ deb-src http://mirrors.aliyun.com/ubuntu/ $(lsb_release -cs)-security main restr
 # Install common libraries and packages
 function install_common_tools() {
     echo "Installing common libraries and packages..."
-    sudo apt install -y htop iotop iftop git curl wget vim
+    sudo apt install -y htop iotop iftop git curl wget vim zsh
+    
+    echo "Installing Oh My Zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 }
 
 # Install programming languages and package managers
